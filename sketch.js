@@ -3,7 +3,7 @@ const World= Matter.World;
 const Bodies = Matter.Bodies;
 
 var engine, world;
-var box1, pig1, platform;
+var box1, pig1, platform, catapult;
 var backgroundImg;
 
 function preload() {
@@ -18,6 +18,7 @@ function setup(){
     
     ground = new Ground(600,height,1200,20)
     platform= new Ground(150,305,300,170);
+    catapult= new Ground(205,190,30,70);
 
     box1 = new Box(700,320,70,70);
     box2 = new Box(920,320,70,70);
@@ -41,9 +42,9 @@ function setup(){
 function draw(){
     background(backgroundImg);
     Engine.update(engine);
-    console.log(box2.body.position.x);
-    console.log(box2.body.position.y);
-    console.log(box2.body.angle);
+    //console.log(box2.body.position.x);
+    //.log(box2.body.position.y);
+    //console.log(box2.body.angle);
     box1.display();
     box2.display();
     ground.display();
@@ -61,4 +62,5 @@ function draw(){
 
     bird.display();
     platform.display();
+    catapult.display();
 }
